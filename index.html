@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎲 El más piña</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🎲 El más piña</h1>
+
+    <div id="setup">
+      <form id="playerForm">
+        <div id="playersInput"></div>
+        <button type="submit" class="start-btn">🎮 ¡Empezar juego!</button>
+      </form>
+      <button id="addPlayer" class="add-btn">➕ Agregar jugador</button>
+    </div>
+
+    <div id="game" class="hidden">
+      <div class="cards" id="playerList"></div>
+      <div class="draw-section">
+        <button id="drawBtn">🎱 Sortear número</button>
+        <div id="drawResult"></div>
+      </div>
+    </div>
+
+    <div id="winnerScreen" class="hidden">
+      <h2 id="winnerName"></h2>
+      <button onclick="location.reload()">🔄 Volver a jugar</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
