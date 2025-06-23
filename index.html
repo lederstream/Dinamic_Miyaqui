@@ -1,37 +1,64 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>🎲 El más piña</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="container">
-    <h1>🎲 El más piña</h1>
+    <header>
+      <h1>🎲 El más piña</h1>
+      <button id="themeToggle">🌓 Cambiar tema</button>
+    </header>
 
+    <!-- SETUP -->
     <div id="setup">
-      <form id="playerForm">
-        <div id="playersInput"></div>
-        <button type="submit" class="start-btn">🎮 ¡Empezar juego!</button>
-      </form>
-      <button id="addPlayer" class="add-btn">➕ Agregar jugador</button>
+      <div id="playerCards"></div>
+      <button id="addPlayerModalBtn" class="add-btn">➕ Agregar jugador</button>
+      <button id="startGameBtn" class="start-btn">🎮 ¡Empezar juego!</button>
+
+      <h3>Números disponibles:</h3>
+      <div id="numberTable"></div>
     </div>
 
+    <!-- MODAL -->
+    <div id="playerModal" class="modal hidden">
+      <div class="modal-content">
+        <h3>➕ Agregar jugador</h3>
+        <input type="text" id="modalName" placeholder="Nombre" />
+        <input type="number" id="modalNumber" placeholder="Número (1-30)" min="1" max="30" />
+        <div class="modal-buttons">
+          <button id="cancelModal">❌ Cancelar</button>
+          <button id="savePlayer">💾 Guardar</button>
+        </div>
+        <p id="modalError" class="error-msg"></p>
+      </div>
+    </div>
+
+    <!-- GAME -->
     <div id="game" class="hidden">
       <div class="cards" id="playerList"></div>
       <div class="draw-section">
         <button id="drawBtn">🎱 Sortear número</button>
         <div id="drawResult"></div>
+        <div id="history"></div>
       </div>
     </div>
 
+    <!-- GANADOR -->
     <div id="winnerScreen" class="hidden">
       <h2 id="winnerName"></h2>
-      <button onclick="location.reload()">🔄 Volver a jugar</button>
+      <button id="playAgain">🔄 Volver a jugar</button>
+    </div>
+
+    <!-- RANKING -->
+    <div id="rankingSection">
+      <h2>👑 Ranking de Ganadores</h2>
+      <ul id="rankingList"></ul>
     </div>
   </div>
-
   <script src="script.js"></script>
 </body>
 </html>
