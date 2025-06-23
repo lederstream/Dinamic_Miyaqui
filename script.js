@@ -50,7 +50,7 @@ function renderPlayers() {
   sortedPlayers.forEach(p => {
     const card = document.createElement("div");
     card.className = "player-card" + (p.eliminated ? " eliminated" : "");
-    const emoji = p.strikes >= 4 ? "💀" : ["🙂", "😐", "😣", "😵"][p.strikes] || "🙂";
+    const emoji = p.strikes >= 4 ? "❌" : ["🙂", "😐", "😣", "😵"][p.strikes] || "🙂";
 
     card.innerHTML = `
       <div class="emoji">${emoji}</div>
