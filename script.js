@@ -46,7 +46,8 @@ function loadGame() {
 
 function renderPlayers() {
   playerList.innerHTML = "";
-  players.forEach(p => {
+  const sortedPlayers = [...players].sort((a, b) => a.number - b.number);
+  sortedPlayers.forEach(p => {
     const card = document.createElement("div");
     card.className = "player-card" + (p.eliminated ? " eliminated" : "");
     const emoji = p.strikes >= 4 ? "💀" : ["🙂", "😐", "😣", "😵"][p.strikes] || "🙂";
